@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>GetitUpThere | Simple Websites for Local Businesses</title>
+  <meta name="description" content="Fast, responsive, affordable static websites for Australian tradies and local professionals. No WordPress, no compulsory monthly maintenance fee, and no unnecessary complexity.">
+  <meta name="theme-color" content="#111827">
+  <style>
+    :root{
+      --bg:#f7f7f4;--paper:#fff;--ink:#111827;--muted:#667085;--line:#e6e7ea;
+      --accent:#ff6b35;--accent2:#ffd166;--green:#2f855a;--dark:#0f172a;--max:1160px;
+      --radius:22px;--shadow:0 18px 50px rgba(17,24,39,.10)
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+    a{text-decoration:none;color:inherit} button{font:inherit}
+    .wrap{width:min(calc(100% - 32px),var(--max));margin:auto}
+    .eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:.78rem;font-weight:900;color:var(--accent)}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(247,247,244,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(17,24,39,.08)}
+    .nav{min-height:76px;display:flex;align-items:center;gap:26px}
+    .brand{display:flex;align-items:center;gap:11px;font-weight:950;letter-spacing:-.03em;font-size:1.18rem;margin-right:auto}
+    .logo-mark{width:42px;height:42px;border-radius:12px;background:var(--dark);display:grid;place-items:center;box-shadow:0 7px 18px rgba(15,23,42,.14)}
+    .logo-mark svg{width:25px;height:25px}.brand span b{color:var(--accent)}
+    nav{display:flex;gap:24px;font-weight:750;font-size:.94rem}nav a:hover{color:var(--accent)}
+    .nav-cta,.btn-primary,.btn-secondary{display:inline-flex;align-items:center;justify-content:center;border-radius:12px;font-weight:900;transition:.2s}
+    .nav-cta{background:var(--dark);color:#fff;padding:12px 18px}.btn-primary{background:var(--accent);color:#fff;padding:15px 21px}.btn-secondary{border:1px solid #cfd3d8;background:#fff;padding:14px 20px}
+    .menu{display:none;border:0;background:none;font-size:1.6rem}
+    .hero{padding:82px 0 68px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.07fr .93fr;gap:54px;align-items:center}
+    h1{font-size:clamp(3.2rem,7vw,6.45rem);letter-spacing:-.065em;line-height:.92;margin:.55rem 0 1.25rem;max-width:800px}.accent{color:var(--accent)}
+    .hero p{max-width:660px;font-size:1.16rem;color:var(--muted);margin:0}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .hero-points{margin-top:28px;display:flex;gap:20px;flex-wrap:wrap;font-size:.9rem;font-weight:800;color:#475467}.hero-points span{display:flex;gap:8px;align-items:center}.dot{width:9px;height:9px;background:var(--green);border-radius:50%}
+    .browser{background:#fff;border:1px solid #dfe3e7;border-radius:24px;box-shadow:var(--shadow);overflow:hidden;transform:rotate(1deg)}
+    .browser-top{height:42px;background:#f0f2f4;border-bottom:1px solid #e4e6e8;display:flex;align-items:center;gap:7px;padding:0 15px}.circle{width:9px;height:9px;border-radius:50%;background:#c8ccd0}
+    .fake-url{margin-left:10px;background:#fff;border:1px solid #e3e5e8;border-radius:8px;height:24px;flex:1;display:flex;align-items:center;padding:0 10px;color:#98a2b3;font-size:.69rem}
+    .mock-hero{min-height:270px;padding:34px;color:#fff;background:linear-gradient(120deg,rgba(15,23,42,.95),rgba(15,23,42,.76)),linear-gradient(45deg,#465362,#111827)}
+    .mock-tag{font-size:.7rem;font-weight:900;color:#ffd2c2;letter-spacing:.1em;text-transform:uppercase}.mock-title{font-size:2.2rem;line-height:1.02;font-weight:950;max-width:370px;margin:10px 0}.mock-copy{font-size:.83rem;max-width:350px;color:#d0d5dd}.mock-btn{display:inline-block;margin-top:15px;padding:10px 13px;background:var(--accent);border-radius:8px;font-size:.75rem;font-weight:900}
+    .mock-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:13px;background:#fafafa}.mock-card{min-height:88px;border-radius:10px;padding:13px;background:#fff;border:1px solid #e9eaec;font-size:.72rem;font-weight:800}.mock-card i{display:block;width:28px;height:5px;border-radius:99px;background:#f4b49e;margin-bottom:15px}
+    .strip{padding:10px 0 58px}.strip-inner{background:var(--dark);color:#fff;border-radius:18px;padding:22px 26px;display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.strip-item strong{display:block;font-size:1.05rem}.strip-item span{font-size:.82rem;color:#cbd5e1}
+    section.block{padding:78px 0}.section-head{max-width:760px;margin-bottom:34px}.section-head h2{font-size:clamp(2.2rem,5vw,4.25rem);letter-spacing:-.05em;line-height:.98;margin:.45rem 0 .9rem}.section-head p{color:var(--muted);font-size:1.05rem}
+    .problem-grid,.examples{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.problem-card,.feature-card,.step-card,.faq-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius)}.problem-card{padding:25px}.num{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:#fff1eb;color:var(--accent);font-weight:950;margin-bottom:22px}.problem-card h3{margin:0 0 8px}.problem-card p{margin:0;color:var(--muted)}
+    .offer{background:var(--dark);color:#fff}.offer .section-head p{color:#cbd5e1}.offer-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:start}.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.feature-card{background:#182238;border-color:#28344b;padding:20px;color:#fff}.feature-card strong{display:block;margin-bottom:6px}.feature-card span{color:#b9c2d0;font-size:.9rem}
+    .price-card{background:#fff;color:var(--ink);border-radius:26px;padding:30px;box-shadow:var(--shadow);position:sticky;top:100px}.price-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900;color:var(--accent)}.price{font-size:4.7rem;font-weight:950;letter-spacing:-.06em;line-height:.95;margin:7px 0}.price small{font-size:1.2rem;letter-spacing:0}.price-note{color:var(--muted);font-size:.92rem}.price-list{padding:0;margin:22px 0;list-style:none;display:grid;gap:10px}.price-list li{display:flex;gap:10px}.price-list li:before{content:"✓";font-weight:950;color:var(--green)}.wide{width:100%}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.step-card{padding:24px}.stepno{font-size:.76rem;color:var(--accent);font-weight:950;text-transform:uppercase;letter-spacing:.1em}.step-card h3{font-size:1.12rem;margin:9px 0 8px}.step-card p{color:var(--muted);margin:0;font-size:.93rem}
+    .example{overflow:hidden;border-radius:22px;background:#fff;border:1px solid var(--line)}.example-visual{height:230px;padding:22px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}.tradie{background:linear-gradient(145deg,#1f2937,#111827 55%,#c4572e)}.professional{background:linear-gradient(145deg,#213547,#335c67 55%,#9eccc5)}.local{background:linear-gradient(145deg,#382b45,#6d4c78 60%,#d9a5cf)}.mini{font-size:.69rem;text-transform:uppercase;letter-spacing:.1em;font-weight:900;opacity:.85}.example-visual strong{font-size:1.6rem;line-height:1.05;margin-top:6px}.example-copy{padding:18px}.example-copy p{margin:0;color:var(--muted);font-size:.9rem}
+    .compare{overflow-x:auto}table{width:100%;border-collapse:collapse;background:#fff;border-radius:20px;overflow:hidden;border:1px solid var(--line)}th,td{padding:16px 18px;text-align:left;border-bottom:1px solid var(--line)}th{background:#f3f4f6;font-size:.82rem;text-transform:uppercase;letter-spacing:.06em}td:nth-child(2){font-weight:900;color:var(--green)}
+    .faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.faq-card{padding:22px}.faq-card h3{margin:0 0 7px;font-size:1.06rem}.faq-card p{margin:0;color:var(--muted)}
+    .cta{margin:78px auto;background:linear-gradient(120deg,var(--accent),#f78b5f);color:#fff;border-radius:28px;padding:42px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}.cta h2{font-size:clamp(2rem,4vw,3.7rem);letter-spacing:-.05em;line-height:.98;margin:0 0 10px}.cta p{margin:0;color:#fff3ed;max-width:650px}.cta .btn-secondary{background:#fff;border-color:#fff;color:#b8421d;white-space:nowrap}
+    footer{background:#0d1320;color:#fff;padding:42px 0 24px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}footer p,footer a{color:#aeb8c7}footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}footer h4{margin:0 0 12px}.fine{border-top:1px solid #263144;margin-top:26px;padding-top:18px;color:#7f8b9e;font-size:.82rem}
+    @media(max-width:900px){nav,.nav-cta{display:none}.menu{display:block}.hero-grid,.offer-grid{grid-template-columns:1fr}.browser{max-width:640px}.strip-inner{grid-template-columns:repeat(2,1fr)}.problem-grid,.examples{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}.price-card{position:static}.footer-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:620px){.hero{padding-top:58px}h1{font-size:clamp(3rem,16vw,4.8rem)}.hero-actions{display:grid}.hero-actions a{width:100%}.strip-inner,.feature-grid,.steps,.faq-grid{grid-template-columns:1fr}.strip{padding-bottom:34px}section.block{padding:58px 0}.cta{grid-template-columns:1fr;padding:28px}.cta .btn-secondary{width:100%}.footer-grid{grid-template-columns:1fr}.brand{font-size:1.05rem}}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#top">
+      <span class="logo-mark">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L6.5 10.5M12 5l5.5 5.5" stroke="#ff6b35" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="#ffd166" stroke-width="2.4" stroke-linecap="round"/></svg>
+      </span>
+      <span>Getit<b>UpThere</b></span>
+    </a>
+    <nav><a href="#service">Service</a><a href="#how">How it works</a><a href="#examples">Examples</a><a href="#faq">FAQ</a></nav>
+    <a class="nav-cta" href="#contact">Get a Website</a>
+    <button class="menu" aria-label="Toggle menu" onclick="toggleMenu()">☰</button>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Simple websites for local businesses</div>
+      <h1>You don't need a <span class="accent">$5,000 website.</span></h1>
+      <p>Get a clean, fast, responsive website that gives your business a proper web presence — without WordPress, unnecessary complexity, or a compulsory monthly maintenance plan.</p>
+      <div class="hero-actions"><a class="btn-primary" href="#service">See the A$300 Website</a><a class="btn-secondary" href="#examples">View Examples</a></div>
+      <div class="hero-points"><span><i class="dot"></i> Mobile friendly</span><span><i class="dot"></i> Fast static hosting</span><span><i class="dot"></i> No compulsory monthly fee</span></div>
+    </div>
+    <div class="browser">
+      <div class="browser-top"><i class="circle"></i><i class="circle"></i><i class="circle"></i><div class="fake-url">yourbusiness.com.au</div></div>
+      <div class="mock-hero"><div class="mock-tag">Local business • Australia</div><div class="mock-title">Quality work. A website that shows it.</div><div class="mock-copy">Your services, your photos, your reviews and a clear way for customers to call or request a quote.</div><span class="mock-btn">Get a Free Quote</span></div>
+      <div class="mock-cards"><div class="mock-card"><i></i>Services</div><div class="mock-card"><i></i>Projects</div><div class="mock-card"><i></i>Contact</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip"><div class="wrap strip-inner">
+  <div class="strip-item"><strong>Static &amp; fast</strong><span>No bloated site builder required.</span></div>
+  <div class="strip-item"><strong>Responsive</strong><span>Built for phones, tablets and desktop.</span></div>
+  <div class="strip-item"><strong>Yours to keep</strong><span>You receive the website files.</span></div>
+  <div class="strip-item"><strong>Easy to connect</strong><span>Use your existing domain or add one later.</span></div>
+</div></div>
+
+<section class="block">
+<div class="wrap">
+  <div class="section-head"><div class="eyebrow">Who this is for</div><h2>Already good at your work. Just missing the website.</h2><p>GetitUpThere is designed for tradies and local professionals who already get business through Google, Facebook, referrals or word of mouth — but don't need an expensive, complicated website.</p></div>
+  <div class="problem-grid">
+    <article class="problem-card"><div class="num">01</div><h3>No website at all</h3><p>Your Google Business Profile and Facebook page are doing all the work, but customers still expect a proper website when they search your business.</p></article>
+    <article class="problem-card"><div class="num">02</div><h3>An old or poor website</h3><p>If your current site is slow, awkward on mobile or simply doesn't represent the quality of your work, a simple rebuild can make a big difference.</p></article>
+    <article class="problem-card"><div class="num">03</div><h3>No need for agency complexity</h3><p>You don't need memberships, e-commerce, a database or ten pages. You need the essentials presented clearly and professionally.</p></article>
+  </div>
+</div>
+</section>
+
+<section class="block offer" id="service">
+<div class="wrap">
+  <div class="section-head"><div class="eyebrow">The standard website</div><h2>A proper business website. Kept simple.</h2><p>One focused, professionally designed page containing the things a potential customer actually needs to see.</p></div>
+  <div class="offer-grid">
+    <div class="feature-grid">
+      <div class="feature-card"><strong>Responsive design</strong><span>Works across current phones, tablets and desktop browsers.</span></div>
+      <div class="feature-card"><strong>Your existing content</strong><span>Your logo, services, project photos, reviews and social links can be brought together.</span></div>
+      <div class="feature-card"><strong>Click-to-call</strong><span>Make it easy for mobile visitors to contact you immediately.</span></div>
+      <div class="feature-card"><strong>Project gallery</strong><span>Show the work that already sells your business on Google and social media.</span></div>
+      <div class="feature-card"><strong>Basic local SEO setup</strong><span>Clear titles, descriptions, headings and location-focused structure.</span></div>
+      <div class="feature-card"><strong>Domain connection</strong><span>Use a domain you already own, or get guidance on registering one in your own name.</span></div>
+      <div class="feature-card"><strong>Fast static site</strong><span>No WordPress database, plugins or routine software updates.</span></div>
+      <div class="feature-card"><strong>Your website files</strong><span>No lock-in. You receive a copy of the finished static site.</span></div>
+    </div>
+    <aside class="price-card">
+      <div class="price-label">Launch offer</div>
+      <div class="price"><small>A$</small>300</div>
+      <div class="price-note">One-off standard static business website setup.</div>
+      <ul class="price-list">
+        <li>One responsive scrolling page</li><li>Services, about, gallery and contact sections</li><li>Phone, Google Maps and social links</li><li>Basic SEO metadata</li><li>Domain connection assistance</li><li>One standard revision round</li>
+      </ul>
+      <a class="btn-primary wide" href="#contact">I Want One</a>
+      <p class="price-note" style="margin-bottom:0;margin-top:14px">A custom domain normally has its own annual registration cost. Extra pages, advanced features and major custom work are quoted separately.</p>
+    </aside>
+  </div>
+</div>
+</section>
+
+<section class="block" id="how">
+<div class="wrap">
+  <div class="section-head"><div class="eyebrow">How it works</div><h2>From Google or Facebook to a proper website.</h2><p>The process is deliberately straightforward. If your business information and photos already exist online, much of the starting material may already be available.</p></div>
+  <div class="steps">
+    <article class="step-card"><div class="stepno">Step 1</div><h3>Show me your business</h3><p>Send your Google Business Profile, Facebook page, current site or basic business details.</p></article>
+    <article class="step-card"><div class="stepno">Step 2</div><h3>I build the page</h3><p>Your services, images and contact information are assembled into a clean responsive website.</p></article>
+    <article class="step-card"><div class="stepno">Step 3</div><h3>You review it</h3><p>See the working site in a browser and request the included standard revision.</p></article>
+    <article class="step-card"><div class="stepno">Step 4</div><h3>Get it up there</h3><p>Connect your domain, publish the site, and start using the link on Google, Facebook and elsewhere.</p></article>
+  </div>
+</div>
+</section>
+
+<section class="block" id="examples">
+<div class="wrap">
+  <div class="section-head"><div class="eyebrow">Built for practical businesses</div><h2>Simple doesn't have to look cheap.</h2><p>The structure stays efficient while the branding, content and presentation reflect the individual business.</p></div>
+  <div class="examples">
+    <article class="example"><div class="example-visual tradie"><span class="mini">Tradies</span><strong>Bricklaying, paving, landscaping, roofing &amp; more</strong></div><div class="example-copy"><p>Project photography, services, service area, reviews and strong quote/call actions.</p></div></article>
+    <article class="example"><div class="example-visual professional"><span class="mini">Professionals</span><strong>Consultants, tutors, accountants &amp; local specialists</strong></div><div class="example-copy"><p>Clear expertise, services, credentials, contact information and professional presentation.</p></div></article>
+    <article class="example"><div class="example-visual local"><span class="mini">Local services</span><strong>Salons, cleaners, pet services, mobile businesses &amp; more</strong></div><div class="example-copy"><p>Opening information, service descriptions, social connections and easy mobile contact.</p></div></article>
+  </div>
+</div>
+</section>
+
+<section class="block">
+<div class="wrap">
+  <div class="section-head"><div class="eyebrow">Why static?</div><h2>Less machinery. Fewer things to go wrong.</h2><p>For a small brochure-style business website, static HTML is often all that is needed.</p></div>
+  <div class="compare"><table><thead><tr><th>Feature</th><th>GetitUpThere static site</th><th>Typical site-builder / CMS</th></tr></thead><tbody>
+    <tr><td>Fast page loading</td><td>Yes</td><td>Depends on platform and plugins</td></tr>
+    <tr><td>Database required</td><td>No</td><td>Often</td></tr>
+    <tr><td>Routine software/plugin updates</td><td>No</td><td>Often</td></tr>
+    <tr><td>Compulsory monthly maintenance plan</td><td>No</td><td>Varies</td></tr>
+    <tr><td>Custom domain</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>Mobile responsive</td><td>Yes</td><td>Usually</td></tr>
+  </tbody></table></div>
+</div>
+</section>
+
+<section class="block" id="faq">
+<div class="wrap">
+  <div class="section-head"><div class="eyebrow">FAQ</div><h2>The practical questions.</h2></div>
+  <div class="faq-grid">
+    <article class="faq-card"><h3>Do I own the website?</h3><p>You receive a copy of the finished website files. There is no requirement to keep paying GetitUpThere simply to keep possession of the site.</p></article>
+    <article class="faq-card"><h3>Do I have to pay every month?</h3><p>No compulsory monthly website or maintenance subscription is included in the standard service. A custom domain normally has its own annual renewal fee.</p></article>
+    <article class="faq-card"><h3>Can I use my existing domain?</h3><p>Yes. If you already own a domain, it can normally be connected to the finished static site.</p></article>
+    <article class="faq-card"><h3>What if I don't have a domain?</h3><p>You can register one in your own name. Guidance can be provided so the domain belongs to you rather than being locked to a developer.</p></article>
+    <article class="faq-card"><h3>Will the site work on phones?</h3><p>Yes. The standard site is designed responsively for current mobile, tablet and desktop browsers.</p></article>
+    <article class="faq-card"><h3>Can you link my Google and Facebook pages?</h3><p>Yes. Your website can link directly to your existing social profiles, Google Maps listing, phone number and other public business channels.</p></article>
+    <article class="faq-card"><h3>Can I add more later?</h3><p>Yes. Extra pages, new sections and additional features can be quoted separately if your needs grow.</p></article>
+    <article class="faq-card"><h3>Is this right for every business?</h3><p>No. Businesses needing e-commerce, complex bookings, membership systems or substantial web applications should use a more advanced solution.</p></article>
+  </div>
+</div>
+</section>
+
+<div class="wrap cta" id="contact">
+  <div><h2>Need a website without making it a project?</h2><p>GetitUpThere is built around a simple idea: use what your business already has, turn it into a professional responsive website, and get it online without unnecessary complication.</p></div>
+  <a class="btn-secondary" href="#" onclick="copyContactMessage(event)">Copy enquiry message</a>
+</div>
+</main>
+
+<footer>
+<div class="wrap">
+  <div class="footer-grid">
+    <div><a class="brand" href="#top" style="color:white"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L6.5 10.5M12 5l5.5 5.5" stroke="#ff6b35" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="#ffd166" stroke-width="2.4" stroke-linecap="round"/></svg></span><span>Getit<b>UpThere</b></span></a><p>Simple, responsive websites for local businesses that need a professional web presence — not an expensive web project.</p></div>
+    <div><h4>Service</h4><ul><li><a href="#service">A$300 Website</a></li><li><a href="#how">How it works</a></li><li><a href="#examples">Examples</a></li></ul></div>
+    <div><h4>Information</h4><ul><li><a href="#faq">FAQ</a></li><li><a href="#contact">Get started</a></li></ul></div>
+  </div>
+  <div class="fine">© 2026 GetitUpThere. Initial launch website. Contact details and final domain can be added before public launch.</div>
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+  const nav=document.querySelector("nav");
+  if(getComputedStyle(nav).display==="none"){
+    nav.style.display="flex";nav.style.position="absolute";nav.style.top="68px";nav.style.left="16px";nav.style.right="16px";nav.style.flexDirection="column";nav.style.background="#fff";nav.style.padding="20px";nav.style.borderRadius="16px";nav.style.boxShadow="0 16px 40px rgba(17,24,39,.15)";
+  }else nav.style.display="none";
+}
+async function copyContactMessage(e){
+  e.preventDefault();
+  const text="Hi, I'm interested in a GetitUpThere business website. My business name is: _____. My current Google/Facebook/website link is: _____.";
+  try{await navigator.clipboard.writeText(text);e.currentTarget.textContent="Enquiry message copied ✓";setTimeout(()=>e.currentTarget.textContent="Copy enquiry message",2200)}
+  catch(err){alert(text)}
+}
+</script>
+</body>
+</html>
